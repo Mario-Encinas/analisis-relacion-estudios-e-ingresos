@@ -19,7 +19,8 @@ library(agricolae)
 #Preprocesado de datos
 #---------------------------------------------------------------------------
 #se carga el archivo.
-dat_economi <- read.csv("dat.economi.csv")
+#nota, es posible que el archivo pese demasiado y algunos ordenadores no sean capaces de descargarlos.
+dat_economi <- read.csv("https://raw.githubusercontent.com/Mario-Encinas/analisis-relacion-estudios-ingresos/main/dat.economi.csv")
 
 
 #---------------------------------------------------------------------------
