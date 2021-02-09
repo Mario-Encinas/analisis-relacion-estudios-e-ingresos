@@ -26,14 +26,14 @@ datos$Escolaridad.jefe<-factor(datos$Escolaridad.jefe,
 # ----
 
 
-#Exploración ----
+#ExploraciÃ³n ----
 nb.cols <- length(unique(datos$Escolaridad.jefe))
 mycolors <- colorRampPalette(brewer.pal(8, "Spectral"))(nb.cols)
 ggplot(datos)+geom_bar(aes(Escolaridad.jefe,fill=Escolaridad.jefe))+coord_flip()+scale_fill_manual(values = mycolors) #+ geom_text(data = datos,aes(x=x))
 
 # outliers
-ggplot(datos,aes(y=sueldos, fill=Tipo.Localidad))+geom_boxplot() # se observa que hay una cantidad considerable de datos atípicos, que
-# representan la desigualdad salarial de las viviendas en méxico.
+ggplot(datos,aes(y=sueldos, fill=Tipo.Localidad))+geom_boxplot() # se observa que hay una cantidad considerable de datos atÃ­picos, que
+# representan la desigualdad salarial de las viviendas en mÃ©xico.
 quantiles<-as.data.frame(quantile(datos$sueldos,seq(0,.99,.01)))
 names(quantiles)<-"Cuantiles"
 quantiles$P<-seq(0,.99,.01)
@@ -76,14 +76,14 @@ ggplot(datos_anova,aes(y=sueldos, fill=Escolaridad.jefe))+geom_boxplot()
 
 
 
-# Realizamos una prueba anova general. Lo más probable es que se rechace la igualdad de medias de salarios según nivel de estudios
-# Nuestro interés está en realizar las comparaciones múltiples para determinar si existen diferencias de salarios entre los niveles de estudios consecutivos.
+# Realizamos una prueba anova general. Lo mÃ¡s probable es que se rechace la igualdad de medias de salarios segÃºn nivel de estudios
+# Nuestro interÃ©s estÃ¡ en realizar las comparaciones mÃºltiples para determinar si existen diferencias de salarios entre los niveles de estudios consecutivos.
 
 anov<-aov(sueldos~Escolaridad.jefe,data = datos_anova)
 summary(anov)
 
 
-#obtenemos un p-valor (muy pequeño) que rechaza la hipotesis nula con cualquier nivel de significancia, por lo que procedemos a realizar comparaciones multiples
+#obtenemos un p-valor (muy pequeÃ±o) que rechaza la hipotesis nula con cualquier nivel de significancia, por lo que procedemos a realizar comparaciones multiples
 scheffe<-scheffe.test(anov,"Escolaridad.jefe",group = F)
 scheffe<-as.data.frame(scheffe$comparison)
 kable(scheffe)
@@ -92,10 +92,10 @@ kable(scheffe)
 #### OTRAS VARIABLES
 
 
-#En el siguiente apartado se intentará explicar el efecto que tienen ciertas variables en el salario que recibe el jefe de familia de una vivienda.
+#En el siguiente apartado se intentarÃ¡ explicar el efecto que tienen ciertas variables en el salario que recibe el jefe de familia de una vivienda.
 
 
-#Decidimos utilizar la variable cuantitativa edad, y las variables cualitativas escolaridad, nivel socioeconómico y tipo de localidad.
+#Decidimos utilizar la variable cuantitativa edad, y las variables cualitativas escolaridad, nivel socioeconÃ³mico y tipo de localidad.
 
 
 #definicion de variables
@@ -104,9 +104,9 @@ variables<-seq(0,6,1)
 variables<-as.data.frame(variables)
 names(variables)<-"Valor"
 variables$Escolaridad<-c("Sin estudios","Preescolar","Primaria","Secundaria","Preparatioria","Profesional","Posgrado")
-variables$NivelSocioeconómico<-c("Bajo","Medio Bajo","Medio Alto","Alto","-","-","-")
+variables$NivelSocioeconÃ³mico<-c("Bajo","Medio Bajo","Medio Alto","Alto","-","-","-")
 variables$Localidad<-c("No ciudad","Ciudad","-","-","-","-","-")
-kable(variables,caption = "Definición de variables categóricas utilizadas en el modelo")
+kable(variables,caption = "DefiniciÃ³n de variables categÃ³ricas utilizadas en el modelo")
 
 
 
