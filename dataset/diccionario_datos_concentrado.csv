@@ -1,0 +1,42 @@
+Tabla  CONCENTRADOHOGAR,,,,,
+,,,,,
+#,Variable,Descripción,Tipo,Categorías,
+,,,,valor,etiqueta o rango
+1,folioviv,"Identificador de la vivienda compuesto por dos dígitos con la clave de la entidad federativa, uno con el ámbito (urbano, código diferente a 6; rural, código 6), cuatro dígitos del número consecutivo de la upm, un dígito de la decena de levantamiento y dos dígitos con un número consecutivo para la vivienda seleccionada.",C (10),,
+2,foliohog,El código 1 identifica al hogar principal y del 2 al 5 los hogares adicionales.,C (1),,
+3,ubica_geo,"Contiene la ubicación geográfica de la vivienda. Los dos primeros dígitos representan la clave de la entidad y los siguientes tres la clave del municipio. Éstas corresponden al Catálogo de claves de entidades federativas, municipios y localidades, que está disponible   en el sitio del INEGI.",C (5),,
+4,tam_loc,Tamaño de la localidad por número de habitantes.,C (1),,"{1,...,4}"
+,,,,1,Localidades con 100 000 y más habitantes
+,,,,2,Localidades con 15 000 a 99 999 habitantes
+,,,,3,Localidades con 2 500 a 14 999 habitantes
+,,,,4,Localidades con menos de 2 500 habitantes
+5,clase_hog,"Diferenciación de los hogares a partir del tipo de relación consanguínea, legal, de afinidad o de costumbre entre el jefe(a) y los otros integrantes del hogar, sin considerar a los trabajadores domésticos y a los familiares de éstos ni a los huéspedes. Se clasifican en: unipersonal: hogar formado por una sola persona que es el jefe(a); nuclear: hogar constituido por un solo grupo familiar primario; ampliado: hogar formado por el jefe(a) y su grupo familiar primario más otros grupos familiares u otros parientes; compuesto: hogar formado por un hogar nuclear o ampliado con personas sin parentesco con el jefe(a); corresidente: hogar formado por dos o más personas que no tienen parentesco con el jefe(a).",C (1),,"{1,...,5}"
+,,,,1,Unipersonal
+,,,,2,Nuclear
+,,,,3,Ampliado
+,,,,4,Compuesto
+,,,,5,Corresidente
+6,edad_jefe,Años transcurridos entre la fecha de nacimiento del jefe del hogar y la fecha de la entrevista.,N (2),,
+7,educa_jefe,Educación formal del jefe del hogar.,C (2),,"{01,...,11}"
+,,,,1,Sin instrucción
+,,,,2,Preescolar
+,,,,3,Primaria incompleta
+,,,,4,Primaria completa
+,,,,5,Secundaria incompleta
+,,,,6,Secundaria completa
+,,,,7,Preparatoria incompleta
+,,,,8,Preparatoria completa
+,,,,9,Profesional incompleta
+,,,,10,Profesional completa
+,,,,11,Posgrado
+8,tot_integ,"Número de personas pertenecientes a este hogar, sin considerar a los trabajadores domésticos y a los familiares de éstos ni a los huéspedes.",N (2),,
+9,mayores,Integrantes del hogar que tienen 12 o más años de edad.,N (2),,
+10,p12_64,Integrantes del hogar cuya edad está entre los 12 y los 64 años.,N (2),,
+11,p65mas,Integrantes del hogar que tienen 65 o más años de edad.,N (2),,
+12,ocupados,Número de personas que tienen trabajo y 14 o más años de edad.,N (2),,
+13,percep_ing,Número de personas que perciben ingreso corriente monetario.,N (2),,
+14,perc_ocupa,Número de personas que perciben ingreso corriente monetario y tienen trabajo.,N (2),,
+15,ing_cor,"Suma de los ingresos por trabajo, los provenientes de rentas, de transferencias, de estimación del alquiler y de otros ingresos.","N (12,2)",,
+16,ingtrab,"Suma del ingreso obtenido por trabajo, como subordinado, como independiente y de otros trabajos.","N (12,2)",,
+17,trabajo,"Son las remuneraciones por trabajo subordinado. Está compuesta por los sueldos, las comisiones, aguinaldo, indemnizaciones del trabajo y remuneraciones en especie.","N (12,2)",,
+18,sueldos,"Remuneraciones por sueldos, salarios y jornal.","N (12,2)",,
